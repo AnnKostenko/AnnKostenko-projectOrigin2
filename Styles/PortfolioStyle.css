@@ -1,0 +1,423 @@
+/*Подключение шрифтов*/
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed');
+@font-face {
+	font-family: Elz;
+	src: url('../Fonts/Elz.ttf');
+}
+
+
+/*Создание анимации*/
+
+@keyframes Text_color {
+	from {
+		color: black;
+	}
+	to {
+		color: red;
+	}
+}
+
+
+/*Параметры поля, я котором находится сам слайдер*/
+
+div>div#content {
+	width: 1000px;
+	height: 500px;
+}
+
+
+/*Подключение изображений для слайдера*/
+
+#img1 {
+	background-image: url('../ImageSlider/img1.jpg');
+}
+
+#img2 {
+	background-image: url('../ImageSlider/img2.jpg');
+}
+
+#img3 {
+	background-image: url('../ImageSlider/img3.jpg');
+}
+
+#img4 {
+	background-image: url('../ImageSlider/img4.jpg');
+}
+
+#img5 {
+	background-image: url('../ImageSlider/img5.jpg');
+}
+
+#img6 {
+	background-image: url('../ImageSlider/img6.jpg');
+}
+
+#img7 {
+	background-image: url('../ImageSlider/img7.jpg');
+}
+
+#img8 {
+	background-image: url('../ImageSlider/img8.jpg');
+}
+
+
+/*Характеристика самого слайдера, в обычном состоянии*/
+
+div#content>div[id="img1"] {
+	background-size: 650px 450px;
+	width: 650px;
+	height: 450px;
+	border: 10px solid white;
+	border-radius: 20px;
+	visibility: hidden;
+	opacity: 0;
+	margin-top: 30px;
+	margin-left: 165px;
+}
+
+div#content>div[id="img2"],
+div[id="img3"],
+div[id="img4"],
+div[id="img5"],
+div[id="img6"],
+div[id="img7"],
+div[id="img8"] {
+	background-size: 650px 450px;
+	width: 650px;
+	height: 450px;
+	border: 10px solid white;
+	border-radius: 20px;
+	visibility: hidden;
+	opacity: 0;
+	margin-top: -450px;
+	margin-left: 165px;
+}
+
+
+/*Замена изображений  и плавный преход, при нажатии на "radio"*/
+
+div#content>input[name="Slide"]:checked+div {
+	border-radius: 20px;
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 2s ease-out 0.1s, visibility 0.1s ease-out 0s;
+}
+
+
+/*Скрытие обычных радио-кнопок */
+
+input[type="radio"] {
+	display: none;
+}
+
+
+/*Вид радио-кнопок, когда элемент выбран*/
+
+input#image1:checked~label[for="image1"],
+input#image2:checked~label[for="image2"],
+input#image3:checked~label[for="image3"],
+input#image4:checked~label[for="image4"],
+input#image5:checked~label[for="image5"],
+input#image6:checked~label[for="image6"],
+input#image7:checked~label[for="image7"],
+input#image8:checked~label[for="image8"] {
+	border: 4px solid white;
+	background-color: #fdbea2;
+}
+
+
+/*Вид радио-кнопок*/
+
+label[for="image1"],
+label[for="image2"],
+label[for="image3"],
+label[for="image4"],
+label[for="image5"],
+label[for="image6"],
+label[for="image7"],
+label[for="image8"] {
+	width: 20px;
+	height: 20px;
+	display: block;
+	position: relative;
+	border-radius: 100%;
+	top: -350px;
+	left: 180px;
+	border: 4px solid #fdbea2;
+	background-color: white;
+	margin-bottom: 15px;
+}
+
+
+/*Характеристика меню*/
+
+#page_menu {
+	width: 170px;
+	height: 408px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	background-color: #fdbea2;
+}
+
+
+/*Отображение пунктов меню*/
+
+.Elem_Menu#one {
+	margin-top: 100px;
+	width: 170px;
+	border-top: 1px solid #111;
+	border-bottom: 1px solid #000;
+	font-family: 'Lobster', cursive;
+}
+
+.Elem_Menu {
+	width: 170px;
+	border-top: 1px solid #111;
+	border-bottom: 1px solid #000;
+	font-family: 'Lobster', cursive;
+}
+
+
+/*Вид названий пунктов меню*/
+
+.Elem_Menu a {
+	display: block;
+	padding: 20px;
+	color: white;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+
+/*Вид пункта меню при наведении на него*/
+
+.Elem_Menu a:hover {
+	color: black;
+	background-color: #fdbea2;
+}
+
+
+/* Cкрываем чекбокс и блок с содержанием */
+
+.mark_menu_appearance {
+	display: none;
+}
+
+.mark_menu_appearance + label ~ div#page_menu {
+	display: none;
+}
+
+
+/* Значек "меню" */
+
+.mark_menu_appearance + label[for="navi"] {
+	position: absolute;
+	left: 10px;
+	top: 25px;
+	z-index: 2;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+}
+
+
+/* Когда чекбокс активен показываем блоки с содержанием  */
+
+.mark_menu_appearance:checked + label + div#page_menu {
+	display: block;
+}
+div#footer {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+
+/*Вид страницы*/
+
+.main_page {
+	margin: 0 auto;
+/*	height: 2800px;*/
+	height: 100%;
+	width: 1000px;
+	background: linear-gradient(to bottom left, #fff, #fdbea2);
+	position: relative;
+	padding: 4px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	background-image: url(../image/pattern.png);
+}
+
+
+/*Характеристика заголовка страницы*/
+
+h2 {
+	margin-left: 160px;
+	margin-top: 15px;
+	font-size: 50px;
+	font-family: Elz;
+	width: 300px;
+	text-align: center;
+}
+
+
+/*Параметры изображений в портфолио*/
+
+div#ListImage {
+	height: 2150px;
+	margin-top: -60px;
+	width: 995px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+div#ListImage a {
+	list-style-type: none;
+	width: 160px;
+	height: 180px;
+	margin-top: 50px;
+	margin-left: -2px;
+}
+
+div#ListImage a img {
+	width: 140px;
+	height: 190px;
+}
+
+div#ListImage>a>img {
+	list-style-type: none;
+	width: 140px;
+	height: 180px;
+	margin-left: -55px;
+	text-align: center;
+}
+
+div#ListImage>a.two>img {
+	list-style-type: none;
+	width: 140px;
+	height: 180px;
+	margin-left: 150px;
+	text-align: center;
+}
+
+div#ListImage>a.three>img {
+	list-style-type: none;
+	width: 140px;
+	height: 180px;
+	margin-left: 355px;
+	text-align: center;
+}
+
+div#ListImage>a.four>img {
+	list-style-type: none;
+	width: 140px;
+	height: 180px;
+	margin-left: 560px;
+	text-align: center;
+}
+
+div#ListImage>a.five>img {
+	list-style-type: none;
+	width: 140px;
+	height: 180px;
+	margin-left: 760px;
+	text-align: center;
+}
+
+img,
+.hover {
+	border: 10px solid white;
+	border-radius: 20px;
+}
+
+
+/*Эффект при наведении мышки на изображение*/
+
+img,
+.hover:hover {
+	border: 15px solid #fdbea2;
+	border-radius: 25px;
+}
+
+
+/*Характеристика и анимация текста "Акция!"*/
+
+#stock {
+	position: absolute;
+	font-family: 'Fira Sans Extra Condensed', sans-serif;
+	left: 680px;
+	top: 27px;
+	font-size: 16px;
+	animation-name: Text_color;
+	animation-duration: 3s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+span {
+	font-size: 30px;
+	font-family: Elz;
+	font-weight: 700;
+}
+
+
+/*Ссылка, при нажатии на которую, пользователь, может вернуться в начало страницы*/
+
+a#link {
+	position: absolute;
+	text-decoration: none;
+	font-size: 30px;
+	font-family: Elz;
+	color: black;
+	top: 2740px;
+	width: 110px;
+}
+
+
+/*Кликабельность и размещение логотипа*/
+
+a img,
+#Logo {
+	width: 90px;
+	height: 90px;
+	position: absolute;
+	left: 75px;
+	border-radius: 100%;
+	border: 10px solid white;
+}
+
+
+/*Вид текста, о разработчике проекта*/
+
+#Develop {
+	width: 400px;
+	margin-left: 580px;
+	font-family: 'Fira Sans Extra Condensed', sans-serif;
+	font-size: 22px;
+}
+
+
+/*Размер и размещение линии*/
+
+hr {
+	width: 500px;
+	margin-left: 490px;
+}

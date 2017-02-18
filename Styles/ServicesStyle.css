@@ -1,0 +1,265 @@
+/*Подключение шрифтов*/
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed');
+@font-face {
+	font-family: Elz;
+	src: url('../Fonts/Elz.ttf');
+}
+
+
+/*Создание анимации*/
+
+@keyframes Text_color {
+	from {
+		color: black;
+	}
+	to {
+		color: red;
+	}
+}
+
+
+/*Характеристика меню*/
+
+#page_menu {
+	width: 170px;
+	height: 408px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	background-color: #fdbea2;
+}
+
+
+/*Отображение пунктов меню*/
+
+.Elem_Menu#one {
+	margin-top: 100px;
+	width: 170px;
+	border-top: 1px solid #111;
+	border-bottom: 1px solid #000;
+	font-family: 'Lobster', cursive;
+}
+
+.Elem_Menu {
+	width: 170px;
+	border-top: 1px solid #111;
+	border-bottom: 1px solid #000;
+	font-family: 'Lobster', cursive;
+}
+
+
+/*Вид названий пунктов меню*/
+
+.Elem_Menu a {
+	display: block;
+	padding: 20px;
+	color: white;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+
+/*Вид пункта меню при наведении на него*/
+
+.Elem_Menu a:hover {
+	color: black;
+	background-color: #fdbea2;
+}
+
+
+/* Cкрываем чекбокс и блок с содержанием */
+
+.mark_menu_appearance {
+	display: none;
+}
+
+.mark_menu_appearance + label ~ div#page_menu {
+	display: none;
+}
+
+
+/* Значек "меню" */
+
+.mark_menu_appearance + label[for="navi"] {
+	position: absolute;
+	left: 10px;
+	top: 25px;
+	z-index: 2;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+}
+
+
+/* Когда чекбокс активен показываем блоки с содержанием  */
+
+.mark_menu_appearance:checked + label + div#page_menu {
+	display: block;
+}
+
+
+/*Вид страницы*/
+
+.main_page {
+	margin: 0 auto;
+/*	height: 800px;*/
+	height: 100%;
+	width: 1000px;
+	background: linear-gradient(to bottom left, #fff, #fdbea2);
+	position: relative;
+	padding: 4px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	background-image: url(../image/pattern.png);
+}
+
+
+/*Характеристика заголовка страницы*/
+
+h2 {
+	margin-left: 160px;
+	margin-top: 15px;
+	font-size: 50px;
+	font-family: Elz;
+	width: 175px;
+	text-align: center;
+}
+
+
+/*Вид текста, о разработчике проекта*/
+
+#Develop {
+	width: 400px;
+	margin-left: 580px;
+	font-family: 'Fira Sans Extra Condensed', sans-serif;
+	font-size: 22px;
+}
+
+
+/*Размер и размещение линии*/
+
+hr {
+	width: 500px;
+	margin-left: 490px;
+	margin-top: 150px;
+}
+
+
+/*Кликабельность и размещение логотипа*/
+
+a img,
+#Logo {
+	width: 90px;
+	height: 90px;
+	position: absolute;
+	left: 75px;
+	border-radius: 100%;
+	border: 10px solid white;
+}
+
+
+/*Характеристика и анимация текста "Акция!"*/
+
+#stock {
+	position: absolute;
+	left: 680px;
+	top: 27px;
+	font-size: 16px;
+	font-family: 'Fira Sans Extra Condensed', sans-serif;
+	animation-name: Text_color;
+	animation-duration: 3s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+span {
+	font-size: 30px;
+	font-family: Elz;
+	font-weight: 700;
+}
+
+
+/*Размер и харкатеристика всего поля, в котором размещены характеристики заказа*/
+
+.fon {
+	width: 300px;
+	height: 400px;
+	margin-top: 50px;
+	border-radius: 20px;
+	background: linear-gradient(to bottom left, #fff, bisque);
+	border: 2px solid grey;
+	box-shadow: 5px 5px 5px grey;
+}
+
+
+/*Характеристика поля с заказом*/
+
+.head {
+	width: 296.4px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	background-color: bisque;
+	text-align: center;
+	line-height: 50px;
+	font-family: cursive;
+	font-size: 35px;
+	border-bottom: 2px solid grey;
+}
+
+ul.Lists>li.First {
+	margin-top: 15px;
+}
+
+ul.Lists>li {
+	list-style-type: none;
+	line-height: 55px;
+	text-align: center;
+	border-bottom: 1px solid grey;
+	border-top: 1px solid grey;
+	font-family: 'Fira Sans Extra Condensed', sans-serif;
+	font-size: 30px;
+}
+
+input[type="button"] {
+	width: 296.4px;
+	text-align: center;
+	line-height: 50px;
+	background-color: bisque;
+	font-family: cursive;
+	font-size: 35px;
+	margin-top: 50px;
+	border: 1px solid grey;
+}
+
+#fon {
+	margin-top: -400px;
+	margin-left: 343px;
+}
+
+#fon1 {
+	margin-top: -400px;
+	margin-left: 685px;
+}
+
+
+/*Вид кнопки "Заказать" при нажатии*/
+
+input[type="button"]:active {
+	background: linear-gradient(to top right, #fff, bisque);
+}
