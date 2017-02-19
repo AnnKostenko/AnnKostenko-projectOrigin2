@@ -158,8 +158,6 @@ label[for="image8"] {
 	height: 408px;
 	position: absolute;
 	top: 0;
-	right: 0;
-	bottom: 0;
 	left: 0;
 	z-index: 1;
 	background-color: #fdbea2;
@@ -171,15 +169,15 @@ label[for="image8"] {
 .Elem_Menu#one {
 	margin-top: 100px;
 	width: 170px;
-	border-top: 1px solid #111;
-	border-bottom: 1px solid #000;
+	border-top: 2px solid bisque;
+	border-bottom: 1px solid bisque;
 	font-family: 'Lobster', cursive;
 }
 
 .Elem_Menu {
 	width: 170px;
-	border-top: 1px solid #111;
-	border-bottom: 1px solid #000;
+	border-top: 1px solid bisque;
+	border-bottom: 1px solid bisque;
 	font-family: 'Lobster', cursive;
 }
 
@@ -233,6 +231,7 @@ label[for="image8"] {
 .mark_menu_appearance:checked + label + div#page_menu {
 	display: block;
 }
+
 div#footer {
 	display: flex;
 	flex-direction: column;
@@ -244,7 +243,6 @@ div#footer {
 
 .main_page {
 	margin: 0 auto;
-/*	height: 2800px;*/
 	height: 100%;
 	width: 1000px;
 	background: linear-gradient(to bottom left, #fff, #fdbea2);
